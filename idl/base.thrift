@@ -24,6 +24,7 @@ struct User {
   3: optional i64 follow_count // 关注总数
   4: optional i64 follower_count // 粉丝总数
   5: bool is_follow // true-已关注，false-未关注
+  6: string avatar //头像url
 }
 
 struct BaseResp{
