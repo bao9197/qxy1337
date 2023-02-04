@@ -61,7 +61,7 @@ struct douyin_query_video_response{
   1:BaseResp base_resp
   3: list<Video> video_list // 用户发布的视频列表
 }
-service FeedService{
+service VideoService{
   douyin_feed_response GetFeedList(1:douyin_feed_request req) //获取视频流列表
   douyin_favorite_action_response FavoriteAction(1:douyin_favorite_action_request req) //用户点赞和取消点赞
   douyin_comment_action_response CommentAction(1:douyin_comment_action_request req) //用户评论

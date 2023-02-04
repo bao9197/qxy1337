@@ -30,6 +30,7 @@ struct User {
   3: optional i64 follow_count // 关注总数
   4: optional i64 follower_count // 粉丝总数
   5: bool is_follow // true-已关注，false-未关注
+  6:string avatar //用户头像的url
 }
 
 struct douyin_feed_request {
@@ -44,8 +45,8 @@ struct douyin_feed_response {
 }
 
 struct douyin_user_register_request {
-  1: string username (api.vd="len($)>0")// 注册用户名，最长32个字符
-  2: string password (api.vd="len($)>0")// 密码，最长32个字符
+  1: string username (api.vd="len($)>0&&len($)<=32")// 注册用户名，最长32个字符
+  2: string password (api.vd="len($)>0&&len($)<=32")// 密码，最长32个字符
 }
 
 struct douyin_user_register_response {
@@ -55,8 +56,8 @@ struct douyin_user_register_response {
 }
 
 struct douyin_user_login_request {
-  1: string username (api.vd="len($)>0")// 登录用户名
-  2: string password (api.vd="len($)>0")// 登录密码
+  1: string username (api.vd="len($)>0&&len($)<=32")// 登录用户名
+  2: string password (api.vd="len($)>0&&len($)<=32")// 登录密码
 }
 struct douyin_user_login_response {
   1:BaseResp base_resp
